@@ -1,0 +1,10 @@
+<div>
+    <div
+        *ngFor="let user of users$ | async"
+        class="users__item"
+        [ngClass]="{ 'users__item--selected': user?.name === activeUser?.name }"
+        (dblclick)="tagUser(user)"
+    >
+        {{ user.name }}
+    </div>
+</div>

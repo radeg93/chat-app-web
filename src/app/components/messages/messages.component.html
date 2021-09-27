@@ -1,0 +1,18 @@
+<main>
+    <div class="messages">
+        <ng-container *ngFor="let message of messages">
+            <div class="messages__item" [ngClass]="{ 'messages__item--sender': message.senderName === activeUser?.name }">
+                <span class="messages__date">({{ message.date | date: 'hh:mm' }})</span>
+                <span class="messages__sender" *ngIf="message.senderName !== activeUser?.name">{{ message.senderName }}:</span>
+                <span
+                    class="messages__message"
+                    [ngClass]="{
+                        'messages__message--sender': message.senderName === activeUser?.name,
+                        'messages__message--recipient': message.senderName !== activeUser?.name
+                    }"
+                    >{{ message.message }}</span
+                >
+            </div>
+        </ng-container>
+    </div>
+</main>

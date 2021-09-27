@@ -1,0 +1,17 @@
+.users {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+
+    &__item {
+        margin: 4px 8px;
+        padding: 8px;
+        background: white;
+        border-radius: 4px;
+
+        &--selected {
+            color: white;
+            background: #0099ff;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+<section class="container">
+    <app-messages [messages]="messages$ | async" [activeUser]="activeUser"></app-messages>
+    <app-user-list [activeUser]="activeUser"></app-user-list>
+    <footer class="input">
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="Message" [formControl]="messageText" />
+            <mat-icon matSuffix (click)="sendMessage()">send</mat-icon>
+        </mat-form-field>
+    </footer>
+</section>
